@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// Stat
 public enum StatType
 {
     AttackDamage,
@@ -16,14 +17,6 @@ public interface IStat
     public float Value { get; }
 }
 
-public class AttackDamageStat : IStat
-{
-    public StatType Type => StatType.AttackDamage;
-
-    private float _value;
-    public float Value => _value;
-}
-
 public enum StatModifierType
 {
     IncreaseFlat,
@@ -34,23 +27,6 @@ public interface IStatModifier
 {
     public StatModifierType Type { get; }
     public abstract float Apply(float input);
-}
-
-public class IncreaseFlatModifier : IStatModifier
-{
-    public StatModifierType Type => StatModifierType.IncreaseFlat;
-
-    private float _value;
-
-    public IncreaseFlatModifier(float value)
-    {
-        _value = value;
-    }
-
-    public float Apply(float input)
-    {
-        return input += _value;
-    }
 }
 
 /// <summary>
@@ -64,6 +40,7 @@ public class EntityStatController : MonoBehaviour
     private void Update()
     {
         // Xử lý logic xóa statmodifier sau bao nhiêu giây hay gì đấy
+        float damageAttack = this.Stats[StatType.Health].Value;
     }
 
 
