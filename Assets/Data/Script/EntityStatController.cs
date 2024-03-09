@@ -55,7 +55,7 @@ public class IncreaseFlatModifier : IStatModifier
 
 /// <summary>
 /// Cái này Mono hay gì cũng được, miễn là có lifecycle tương tự như mono là đc
-/// </summary>
+/// </ summary >
 public class EntityStatController : MonoBehaviour
 {
     public Dictionary<StatType, IStat> Stats = new();
