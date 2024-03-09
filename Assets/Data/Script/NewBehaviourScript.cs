@@ -84,7 +84,7 @@ public class EntityStatController : MonoBehaviour
     {
         return Stats[type].Value;
     }
-
+    
     public float GetStatFinalValue(StatType type)
     {
         return GetFinalValue(type);
